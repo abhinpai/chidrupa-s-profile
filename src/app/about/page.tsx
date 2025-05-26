@@ -71,7 +71,7 @@ export default function About() {
 
   const getExp = () => {
     const today = new Date()
-    const startDate = new Date(2018, 0, 12)
+    const startDate = new Date(2021, 0, 1)
     let years = differenceInYears(today, startDate)
     console.log(years)
 
@@ -241,7 +241,32 @@ export default function About() {
               gap='m'
               marginBottom='xl'
             >
-              I'm a full-stack developer with {getExp()} of experience building
+              I’m {person.firstName} {person.lastName}, a {person.role} with
+              over {getExp()} years of experience across UX, interaction design,
+              front-end development, and content strategy. I'm currently working
+              at Schrödinger where I lead the design for LiveDesign and Maestro
+              – platforms used for computational chemistry and drug discovery.
+              <br />
+              <br />
+              Previously, I worked as a UX Researcher and Designer at Arizona
+              State University and interned at Ourdate, where I streamlined
+              information architecture and user flows. My journey also includes
+              front-end development at Deloitte where I built web pages and
+              campaign tools with HTML, CSS, and JavaScript on Salesforce
+              Marketing Cloud.
+              <br />
+              <br />
+              I specialize in end-to-end product design, usability testing,
+              design systems, and research. Tools I use include Figma, Adobe XD,
+              Sketch, Zeplin, HTML/CSS, JavaScript, and more. I've designed for
+              enterprise platforms, B2B SaaS tools, marketing dashboards, and
+              educational apps in agile teams.
+              <br />
+              <br />
+              I’m a curious, self-driven designer who also loves writing,
+              history, books, and travel. I thrive in collaborative environments
+              and enjoy solving complex problems through user-centered design.
+              {/* I'm a full-stack developer with  of experience building
               seamless digital experiences that blend design and technology. I
               craft intuitive, pixel-perfect user interfaces backed by
               high-performance, AI-driven backends. My expertise spans frontend
@@ -251,7 +276,7 @@ export default function About() {
               <br />
               <br />
               When I’m not coding, I enjoy sketching and painting, finding fresh
-              inspiration for my work through creativity and exploration.
+              inspiration for my work through creativity and exploration. */}
             </Column>
           )}
 
@@ -359,12 +384,25 @@ export default function About() {
                     <Text id={institution.name} variant='heading-strong-l'>
                       {institution.name}
                     </Text>
-                    <Text
-                      variant='heading-default-xs'
-                      onBackground='neutral-weak'
+                    <Flex
+                      fillWidth
+                      horizontal='space-between'
+                      vertical='end'
+                      marginBottom='4'
                     >
-                      {institution.description}
-                    </Text>
+                      <Text
+                        variant='body-default-m'
+                        onBackground='neutral-weak'
+                      >
+                        {institution.description}
+                      </Text>
+                      <Text
+                        variant='heading-default-xs'
+                        onBackground='neutral-weak'
+                      >
+                        {institution.timeframe}
+                      </Text>
+                    </Flex>
                   </Column>
                 ))}
               </Column>
